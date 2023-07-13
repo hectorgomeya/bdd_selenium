@@ -8,10 +8,14 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import utilities.TestContext;
+import utilities.ScreenRecorderUtil;
+
+import static utilities.ScreenRecorderUtil.*;
 
 public class Hooks {
     TestContext testContext;
     WebDriver webDriver;
+
 
     public Hooks(TestContext context)
     {
@@ -19,13 +23,14 @@ public class Hooks {
     }
 
     @Before
-    public void setUp(){
+    public void setUp() throws Exception {
+        startRecord("test");
         webDriver = testContext.getDriverManager().getDriver();
         webDriver.get("https://www.demoblaze.com/index.html");
     }
 
     @After
-    public void tearDown(Scenario scenario){
+    public void tearDown(Scenario scenario) throws Exception {
         if(scenario.isFailed()){
             try {
                 byte[] screenshot = ((TakesScreenshot)testContext.getDriverManager().getDriver()).getScreenshotAs(OutputType.BYTES);
@@ -34,6 +39,12 @@ public class Hooks {
                 System.err.println(noSupportScreenshot.getMessage());
             }
         }
+        try {
+            stopRecord();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         testContext.getDriverManager().tearDown();
+
     }
 }

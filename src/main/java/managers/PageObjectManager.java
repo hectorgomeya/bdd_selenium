@@ -12,6 +12,7 @@ public class PageObjectManager {
 
     private HomePage homePage;
     private LoginPage loginPage;
+
     public PageObjectManager(WebDriver driver, WebDriverWait wait){
         this.driver = driver;
         this.wait = wait;
@@ -24,4 +25,5 @@ public class PageObjectManager {
     public LoginPage getLoginPage() {
         return (loginPage == null) ? loginPage = new LoginPage(driver, wait) : loginPage;
     }
+
 }
