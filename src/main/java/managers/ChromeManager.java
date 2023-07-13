@@ -8,10 +8,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ChromeManager {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    public Map<String, String> myMap = new HashMap<>();
+
 
     private WebDriver setUp(){
         WebDriverManager.chromedriver().setup();
@@ -36,8 +41,10 @@ public class ChromeManager {
             wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         return wait;
     }
-
-    public void tearDown(){
-        driver.quit();
+    public Map<String, String> getMyMap(){
+        return myMap;
     }
+   /* public void tearDown(){
+        driver.quit();
+    }*/
 }

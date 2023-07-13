@@ -60,4 +60,8 @@ public class HomePage {
         return driver.getCurrentUrl();
     }
 
+    public void goToButtonCart(){
+        wait.until(ExpectedConditions.elementToBeClickable(cartButton)).click();
+    }
+
 }

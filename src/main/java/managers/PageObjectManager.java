@@ -2,8 +2,10 @@ package managers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageObjects.HomePage;
-import pageObjects.LoginPage;
+import pageObjects.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class PageObjectManager {
 
@@ -13,9 +15,18 @@ public class PageObjectManager {
     private HomePage homePage;
     private LoginPage loginPage;
 
-    public PageObjectManager(WebDriver driver, WebDriverWait wait){
+    private CartPage cartPage;
+
+    private PlaceOrderPage placeOrderPage;
+    private ValidateMessagePage validateMessagePage;
+    private ProductPage productPage;
+
+    public Map<String, String> contextData;
+
+    public PageObjectManager(WebDriver driver, WebDriverWait wait, Map<String, String> contextData){
         this.driver = driver;
         this.wait = wait;
+        this.contextData = contextData;
     }
 
     public HomePage getHomePage() {
@@ -26,4 +37,19 @@ public class PageObjectManager {
         return (loginPage == null) ? loginPage = new LoginPage(driver, wait) : loginPage;
     }
 
+    public ProductPage getProductPage() {
+        return (productPage == null) ? productPage = new ProductPage(driver, wait, contextData) : productPage;
+    }
+
+    public CartPage getCartPage() {
+        return (cartPage == null) ? cartPage = new CartPage(driver, wait, contextData) : cartPage;
+    }
+
+    public PlaceOrderPage getPlaceOrderPage() {
+        return (placeOrderPage == null) ? placeOrderPage = new PlaceOrderPage(driver, wait) : placeOrderPage;
+    }
+
+    public ValidateMessagePage getValidateMessagePage() {
+        return (validateMessagePage == null) ? validateMessagePage = new ValidateMessagePage(driver, wait) : validateMessagePage;
+    }
 }

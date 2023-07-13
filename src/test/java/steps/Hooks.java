@@ -44,7 +44,7 @@ public class Hooks {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        testContext.getDriverManager().tearDown();
+      //  testContext.getDriverManager().tearDown();
 
     }
 }
