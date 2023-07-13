@@ -44,7 +44,7 @@ public class ChromeManager {
     public Map<String, String> getMyMap(){
         return myMap;
     }
-   /* public void tearDown(){
+    public void tearDown(){
         driver.quit();
-    }*/
+    }
 }

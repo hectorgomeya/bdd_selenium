@@ -38,4 +38,10 @@ public class ProductSteps {
         homePage.goToButtonCart();
         Assert.assertTrue(testContext.getDriverManager().getDriver().getCurrentUrl().contains("cart"));
     }
+
+    @And("Only Go to cart")
+    public void OnlygoToCart(){
+        homePage.goToButtonCart();
+        Assert.assertTrue(testContext.getDriverManager().getDriver().getCurrentUrl().contains("cart"));
+    }
 }
