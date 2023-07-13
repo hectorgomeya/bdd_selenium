@@ -67,5 +67,11 @@
             <artifactId>monte-screen-recorder</artifactId>
             <version>0.7.7.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.github.bogdanlivadariu</groupId>
+            <artifactId>gif-webdriver</artifactId>
+            <version>LATEST</version>
+        </dependency>
     </dependencies>
 </project>

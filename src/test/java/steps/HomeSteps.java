@@ -1,5 +1,6 @@
 package steps;
 
+import com.github.bogdanlivadariu.gifwebdriver.GifWebDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;

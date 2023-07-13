@@ -1,5 +1,6 @@
 package steps;
 
+import com.github.bogdanlivadariu.gifwebdriver.GifWebDriver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -7,8 +8,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.chrome.ChromeDriver;
 import utilities.TestContext;
 import utilities.ScreenRecorderUtil;
+
+import java.io.File;
 
 import static utilities.ScreenRecorderUtil.*;
 
@@ -24,9 +28,14 @@ public class Hooks {
 
     @Before
     public void setUp() throws Exception {
-        startRecord("test");
+
+       // startRecord("test");
         webDriver = testContext.getDriverManager().getDriver();
+       // testContext.getDriverManager().tomagif();
+    //    testContext.tomagif();
         webDriver.get("https://www.demoblaze.com/index.html");
+
+
     }
 
     @After
@@ -40,11 +49,12 @@ public class Hooks {
             }
         }
         try {
-            stopRecord();
+          //  stopRecord();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
         testContext.getDriverManager().tearDown();
+
 
     }
 }
