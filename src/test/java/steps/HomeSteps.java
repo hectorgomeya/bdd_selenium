@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
@@ -32,6 +33,11 @@ public class HomeSteps {
     public void findProduct(String product, String category){
         String currentUrl = homePage.findProduct(product, category);
         Assert.assertTrue(currentUrl.contains("prod"));
+    }
+
+    @Given("Go to Sing In page")
+    public void gotoSingIn() {
+        homePage.goToLoginSingIng();
     }
 
 }

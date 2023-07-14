@@ -26,6 +26,9 @@ public class HomePage {
     @FindBy(id = "cartur")
     WebElement cartButton;
 
+    @FindBy (xpath = "//*[@id=\"signin2\"]")
+    WebElement singButton;
+
     private WebDriver driver;
     private WebDriverWait wait;
 
@@ -63,5 +66,8 @@ public class HomePage {
     public void goToButtonCart(){
         wait.until(ExpectedConditions.elementToBeClickable(cartButton)).click();
     }
+
+    public void goToLoginSingIng() { wait.until(ExpectedConditions.elementToBeClickable(singButton)).click();}
+
 
 }

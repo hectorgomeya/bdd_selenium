@@ -30,7 +30,7 @@ public class LoginSteps {
                 WebElement loginCheck = loginPage.login(username, password, flag);
 
                 Assert.assertTrue(loginCheck.getText()
-                                  .contains("asd")
+                                  .contains(username)
                                   );
                 break;
             case "incorrecto":

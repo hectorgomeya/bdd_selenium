@@ -21,6 +21,8 @@ public class PageObjectManager {
     private ValidateMessagePage validateMessagePage;
     private ProductPage productPage;
 
+    private SingInPage singPage;
+
     public Map<String, String> contextData;
 
     public PageObjectManager(WebDriver driver, WebDriverWait wait, Map<String, String> contextData){
@@ -51,5 +53,9 @@ public class PageObjectManager {
 
     public ValidateMessagePage getValidateMessagePage() {
         return (validateMessagePage == null) ? validateMessagePage = new ValidateMessagePage(driver, wait) : validateMessagePage;
+    }
+
+    public SingInPage getSingPage() {
+        return (singPage == null) ? singPage = new SingInPage(driver, wait, contextData) : singPage;
     }
 }
