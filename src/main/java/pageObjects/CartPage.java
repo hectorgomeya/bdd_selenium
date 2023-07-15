@@ -50,16 +50,15 @@ public class CartPage{
              boolean isVisible = true;
         while (isVisible) {
             List<WebElement> rows = driver.findElements(By.tagName("tr"));
-            int size = rows.size();
-            if (size != 2) {
-                //*[@id="tbodyid"]/tr/td[4]/a
-                WebElement deleteproducto = driver.findElement(By.xpath("//*[@id=\"tbodyid\"]/tr[1]/td[4]/a"));
-                wait.until(ExpectedConditions.elementToBeClickable(deleteproducto)).click();
-              //  isVisible = deleteproducto.isDisplayed();
-            } else {
+            int size = rows.size() - 1;
+            if (size == 1) {
                 WebElement deleteproducto = driver.findElement(By.xpath("//*[@id=\"tbodyid\"]/tr/td[4]/a"));
                 wait.until(ExpectedConditions.elementToBeClickable(deleteproducto)).click();
                 isVisible = false;
+
+            } else {
+                WebElement deleteproducto = driver.findElement(By.xpath("//*[@id=\"tbodyid\"]/tr[1]/td[4]/a"));
+                wait.until(ExpectedConditions.elementToBeClickable(deleteproducto)).click();
 
             }
 

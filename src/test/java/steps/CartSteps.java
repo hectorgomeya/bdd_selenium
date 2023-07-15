@@ -5,10 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import pageObjects.CartPage;
-import pageObjects.LoginPage;
-import pageObjects.ProductPage;
+import pageObjects.*;
 import utilities.TestContext;
+
 
 import java.util.HashMap;
 import java.util.Map;
