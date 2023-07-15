@@ -54,11 +54,11 @@ public class CartPage{
             if (size != 2) {
                 //*[@id="tbodyid"]/tr/td[4]/a
                 WebElement deleteproducto = driver.findElement(By.xpath("//*[@id=\"tbodyid\"]/tr[1]/td[4]/a"));
-                deleteproducto.click();
-                isVisible = deleteproducto.isDisplayed();
+                wait.until(ExpectedConditions.elementToBeClickable(deleteproducto)).click();
+              //  isVisible = deleteproducto.isDisplayed();
             } else {
                 WebElement deleteproducto = driver.findElement(By.xpath("//*[@id=\"tbodyid\"]/tr/td[4]/a"));
-                deleteproducto.click();
+                wait.until(ExpectedConditions.elementToBeClickable(deleteproducto)).click();
                 isVisible = false;
 
             }

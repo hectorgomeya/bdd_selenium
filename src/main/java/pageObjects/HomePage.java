@@ -29,6 +29,10 @@ public class HomePage {
     @FindBy (xpath = "//*[@id=\"signin2\"]")
     WebElement singButton;
 
+    @FindBy (xpath = "//*[@id=\"navbarExample\"]/ul/li[2]/a")
+    WebElement contactButton;
+
+
     private WebDriver driver;
     private WebDriverWait wait;
 
@@ -68,6 +72,9 @@ public class HomePage {
     }
 
     public void goToLoginSingIng() { wait.until(ExpectedConditions.elementToBeClickable(singButton)).click();}
+
+    public void goContact() { wait.until(ExpectedConditions.elementToBeClickable(contactButton)).click();}
+
 
 
 }

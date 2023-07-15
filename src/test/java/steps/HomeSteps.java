@@ -40,4 +40,11 @@ public class HomeSteps {
         homePage.goToLoginSingIng();
     }
 
+
+    @Given("Go to contact page")
+    public void gotoContactPage() {
+        homePage.goContact();
+
+            }
+
 }

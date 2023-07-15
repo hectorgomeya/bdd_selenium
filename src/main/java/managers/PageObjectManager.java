@@ -21,6 +21,8 @@ public class PageObjectManager {
     private ValidateMessagePage validateMessagePage;
     private ProductPage productPage;
 
+    private ContactPage contactPage;
+
     private SingInPage singPage;
 
     public Map<String, String> contextData;
@@ -57,5 +59,11 @@ public class PageObjectManager {
 
     public SingInPage getSingPage() {
         return (singPage == null) ? singPage = new SingInPage(driver, wait, contextData) : singPage;
+    }
+
+    public ContactPage getContactPage() {
+        return (contactPage == null) ? contactPage = new ContactPage(driver, wait, contextData) : contactPage;
+
+
     }
 }
